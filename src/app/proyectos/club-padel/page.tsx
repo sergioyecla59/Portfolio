@@ -1,7 +1,30 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function ClubPadelPage() {
+  const [imagenAbierta, setImagenAbierta] = useState<string | null>(null);
+
+  /* ==================================================
+      CERRAR LIGHTBOX CON ESC
+  ================================================== */
+
+  useEffect(() => {
+    const cerrarConEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setImagenAbierta(null);
+      }
+    };
+
+    window.addEventListener("keydown", cerrarConEscape);
+
+    return () => {
+      window.removeEventListener("keydown", cerrarConEscape);
+    };
+  }, []);
+
   return (
     <main className="min-h-screen bg-slate-950 text-white">
 
@@ -101,7 +124,11 @@ export default function ClubPadelPage() {
 
         <div className="overflow-hidden rounded-3xl border border-white/10 bg-slate-900 p-2 shadow-2xl">
 
-          <div className="overflow-hidden rounded-2xl bg-slate-900">
+          <button
+            type="button"
+            onClick={() => setImagenAbierta("/projects/padel.jpg")}
+            className="block w-full cursor-zoom-in overflow-hidden rounded-2xl bg-slate-900"
+          >
 
             <Image
               src="/projects/padel.jpg"
@@ -110,10 +137,10 @@ export default function ClubPadelPage() {
               height={1080}
               priority
               unoptimized
-              className="h-auto w-full"
+              className="h-auto w-full transition duration-500 hover:scale-[1.01]"
             />
 
-          </div>
+          </button>
 
         </div>
       </section>
@@ -241,7 +268,7 @@ export default function ClubPadelPage() {
 
             <p className="mt-4 max-w-2xl text-slate-400">
               Diferentes vistas de la aplicación y del proceso de reserva
-              de pistas.
+              de pistas. Pulsa sobre una captura para verla completa.
             </p>
 
           </div>
@@ -258,7 +285,13 @@ export default function ClubPadelPage() {
 
             <article className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
 
-              <div className="h-[260px] overflow-hidden bg-slate-950">
+              <button
+                type="button"
+                onClick={() =>
+                  setImagenAbierta("/projects/Pistas_Club_Padel.jpg")
+                }
+                className="block h-[260px] w-full cursor-zoom-in overflow-hidden bg-slate-950"
+              >
 
                 <Image
                   src="/projects/Pistas_Club_Padel.jpg"
@@ -269,7 +302,7 @@ export default function ClubPadelPage() {
                   className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
                 />
 
-              </div>
+              </button>
 
               <div className="border-t border-white/10 p-5">
 
@@ -295,7 +328,13 @@ export default function ClubPadelPage() {
 
             <article className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
 
-              <div className="h-[260px] overflow-hidden bg-slate-950">
+              <button
+                type="button"
+                onClick={() =>
+                  setImagenAbierta("/projects/Reservas_Club_Padel.jpg")
+                }
+                className="block h-[260px] w-full cursor-zoom-in overflow-hidden bg-slate-950"
+              >
 
                 <Image
                   src="/projects/Reservas_Club_Padel.jpg"
@@ -306,7 +345,7 @@ export default function ClubPadelPage() {
                   className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
                 />
 
-              </div>
+              </button>
 
               <div className="border-t border-white/10 p-5">
 
@@ -332,7 +371,13 @@ export default function ClubPadelPage() {
 
             <article className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
 
-              <div className="h-[260px] overflow-hidden bg-slate-950">
+              <button
+                type="button"
+                onClick={() =>
+                  setImagenAbierta("/projects/Registro_Club_Padel.jpg")
+                }
+                className="block h-[260px] w-full cursor-zoom-in overflow-hidden bg-slate-950"
+              >
 
                 <Image
                   src="/projects/Registro_Club_Padel.jpg"
@@ -343,7 +388,7 @@ export default function ClubPadelPage() {
                   className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
                 />
 
-              </div>
+              </button>
 
               <div className="border-t border-white/10 p-5">
 
@@ -453,6 +498,52 @@ export default function ClubPadelPage() {
 
         </div>
       </section>
+
+
+      {/* ==================================================
+          LIGHTBOX
+      ================================================== */}
+
+      {imagenAbierta && (
+
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm sm:p-8"
+          onClick={() => setImagenAbierta(null)}
+        >
+
+          {/* BOTÓN CERRAR */}
+
+          <button
+            type="button"
+            onClick={() => setImagenAbierta(null)}
+            className="absolute right-5 top-5 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-slate-900 text-2xl text-white transition hover:bg-cyan-400 hover:text-slate-950 sm:right-8 sm:top-8"
+            aria-label="Cerrar imagen"
+          >
+            ×
+          </button>
+
+
+          {/* IMAGEN GRANDE */}
+
+          <div
+            className="relative flex max-h-[90vh] max-w-[95vw] items-center justify-center"
+            onClick={(event) => event.stopPropagation()}
+          >
+
+            <Image
+              src={imagenAbierta}
+              alt="Captura ampliada del proyecto Club Pádel"
+              width={1920}
+              height={1080}
+              unoptimized
+              className="max-h-[90vh] max-w-[95vw] rounded-xl object-contain shadow-2xl"
+            />
+
+          </div>
+
+        </div>
+
+      )}
 
     </main>
   );
