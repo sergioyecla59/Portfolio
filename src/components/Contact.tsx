@@ -11,7 +11,13 @@ const registrarContactoEmail = () => {
     });
   }
 };
-
+const registrarClickGithub = () => {
+  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+    window.gtag("event", "github_click", {
+      destination: "github",
+    });
+  }
+};
 export default function Contact() {
   return (
     <section
@@ -109,6 +115,7 @@ export default function Contact() {
             href="https://github.com/sergioyecla59"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={registrarClickGithub}
             className="group rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:bg-white/[0.06]"
           >
             <div className="mb-5 flex items-start justify-between">
