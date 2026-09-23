@@ -8,7 +8,7 @@ const projects = [
     description:
       "Aplicación web para una empresa de colchones con catálogo, panel de administración, gestión de productos, pedidos y proceso de compra online.",
     technologies: ["Laravel", "MySQL", "Stripe", "JavaScript"],
-    image: "/projects/colchones1.jpg",
+    image: "/projects/descanso-premium/colchones1.jpg",
     href: "/proyectos/descanso-premium",
   },
   {

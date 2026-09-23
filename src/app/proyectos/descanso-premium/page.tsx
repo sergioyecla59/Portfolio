@@ -132,13 +132,13 @@ export default function DescansoPremiumPage() {
           <button
             type="button"
             onClick={() =>
-              setImagenAbierta("/projects/colchones1.jpg")
+              setImagenAbierta("/projects/descanso-premium/colchones1.jpg")
             }
             className="block w-full cursor-zoom-in overflow-hidden rounded-2xl bg-slate-900"
           >
 
             <Image
-              src="/projects/colchones1.jpg"
+              src="/projects/descanso-premium/colchones1.jpg"
               alt="Página principal de Descanso Premium"
               width={1920}
               height={1080}
@@ -301,14 +301,14 @@ export default function DescansoPremiumPage() {
                 type="button"
                 onClick={() =>
                   setImagenAbierta(
-                    "/projects/Catalogo_Descanso_Premium.jpg"
+                    "/projects/descanso-premium/Catalogo_Descanso_Premium.jpg"
                   )
                 }
                 className="block h-[260px] w-full cursor-zoom-in overflow-hidden bg-slate-950"
               >
 
                 <Image
-                  src="/projects/Catalogo_Descanso_Premium.jpg"
+                  src="/projects/descanso-premium/Catalogo_Descanso_Premium.jpg"
                   alt="Catálogo de productos de Descanso Premium"
                   width={1600}
                   height={900}
@@ -344,13 +344,13 @@ export default function DescansoPremiumPage() {
               <button
                 type="button"
                 onClick={() =>
-                  setImagenAbierta("/projects/Admin_Descanso_Premium.jpg")
+                  setImagenAbierta("/projects/descanso-premium/Admin_Descanso_Premium.jpg")
                 }
                 className="block h-[260px] w-full cursor-zoom-in overflow-hidden bg-slate-950"
               >
 
                 <Image
-                  src="/projects/Admin_Descanso_Premium.jpg"
+                  src="/projects/descanso-premium/Admin_Descanso_Premium.jpg"
                   alt="Panel de administración de Descanso Premium"
                   width={1600}
                   height={900}
@@ -386,13 +386,13 @@ export default function DescansoPremiumPage() {
               <button
                 type="button"
                 onClick={() =>
-                  setImagenAbierta("/projects/Checkout_Descanso_Premium.jpg")
+                  setImagenAbierta("/projects/descanso-premium/Checkout_Descanso_Premium.jpg")
                 }
                 className="block h-[260px] w-full cursor-zoom-in overflow-hidden bg-slate-950"
               >
 
                 <Image
-                  src="/projects/Checkout_Descanso_Premium.jpg"
+                  src="/projects/descanso-premium/Checkout_Descanso_Premium.jpg"
                   alt="Proceso de compra de Descanso Premium"
                   width={1600}
                   height={900}
