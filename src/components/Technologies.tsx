@@ -47,6 +47,20 @@ const technologies = [
     description: "Interfaces responsive adaptadas a ordenador, tablet y móvil.",
     icon: "</>",
   },
+  {
+    name: "Google Analytics 4",
+    category: "Analítica web",
+    description:
+      "Medición de tráfico, comportamiento de usuarios y eventos personalizados.",
+    icon: "GA4",
+  },
+  {
+    name: "SEO técnico",
+    category: "SEO & Analítica",
+    description:
+      "Search Console, sitemap, robots.txt, indexación y optimización de metadatos.",
+    icon: "SEO",
+  },
 ];
 
 export default function Technologies() {
@@ -64,7 +78,6 @@ export default function Technologies() {
 
         <div className="absolute -left-40 bottom-0 h-[350px] w-[350px] rounded-full bg-blue-400/10 blur-3xl" />
       </div>
-
 
       <div className="relative mx-auto max-w-7xl px-6">
 
@@ -92,21 +105,19 @@ export default function Technologies() {
 
           </div>
 
-
           <div className="lg:pb-1">
 
             <p className="max-w-xl text-base leading-7 text-slate-600">
 
-              Trabajo con tecnologías de frontend, backend y bases de datos
-              para desarrollar soluciones web completas, desde la interfaz
-              hasta la lógica y gestión de la información.
+              Trabajo con tecnologías de frontend, backend y bases de datos,
+              complementando el desarrollo con analítica web y SEO técnico
+              para crear soluciones web completas.
 
             </p>
 
           </div>
 
         </div>
-
 
         {/* ==================================================
             GRID DE TECNOLOGÍAS
@@ -127,7 +138,6 @@ export default function Technologies() {
                 {String(index + 1).padStart(2, "0")}
               </span>
 
-
               {/* ICONO */}
 
               <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-slate-950 text-sm font-bold text-cyan-400 transition duration-300 group-hover:bg-cyan-400 group-hover:text-slate-950">
@@ -135,7 +145,6 @@ export default function Technologies() {
                 {technology.icon}
 
               </div>
-
 
               {/* CATEGORÍA */}
 
@@ -145,7 +154,6 @@ export default function Technologies() {
 
               </span>
 
-
               {/* NOMBRE */}
 
               <h3 className="mt-2 text-lg font-bold text-slate-950">
@@ -154,7 +162,6 @@ export default function Technologies() {
 
               </h3>
 
-
               {/* DESCRIPCIÓN */}
 
               <p className="mt-2 text-sm leading-6 text-slate-600">
@@ -162,7 +169,6 @@ export default function Technologies() {
                 {technology.description}
 
               </p>
-
 
               {/* LÍNEA INFERIOR */}
 
@@ -178,7 +184,6 @@ export default function Technologies() {
 
         </div>
 
-
         {/* ==================================================
             BLOQUE INFERIOR
         ================================================== */}
@@ -192,11 +197,10 @@ export default function Technologies() {
             </p>
 
             <p className="mt-1 text-sm text-slate-400">
-              Frontend · Backend · Bases de datos · Responsive · Despliegue
+              Frontend · Backend · Bases de datos · Analítica · SEO técnico · Despliegue
             </p>
 
           </div>
-
 
           <a
             href="#proyectos"
