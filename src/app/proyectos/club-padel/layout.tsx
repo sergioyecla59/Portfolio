@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Club Pádel | Sergio Muñoz",
 
   description:
-    "Proyecto web de Club Pádel desarrollado con Laravel, PHP, MySQL y JavaScript, con interfaz responsive y sistema orientado a la gestión y reserva de pistas.",
+    "Proyecto web para un club de pádel desarrollado con Laravel y Blade, con una interfaz responsive orientada a pistas, horarios, usuarios y reservas.",
 };
 
 export default function ClubPadelLayout({

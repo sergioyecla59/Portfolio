@@ -3,6 +3,15 @@ import Link from "next/link";
 
 const projects = [
   {
+    title: "GestionPro",
+    type: "Software de gestión",
+    description:
+      "Aplicación web de gestión empresarial para centralizar clientes, productos, proveedores y documentos comerciales, con un flujo de trabajo desde presupuestos hasta facturación.",
+    technologies: ["Next.js", "TypeScript", "Laravel", "MySQL", "REST API"],
+    image: "/projects/gestionpro/HomeGestion.jpg",
+    href: "/proyectos/gestionpro",
+  },
+  {
     title: "Descanso Premium",
     type: "E-commerce",
     description:
@@ -15,8 +24,8 @@ const projects = [
     title: "Club Pádel",
     type: "Aplicación Web",
     description:
-      "Sistema para digitalizar la gestión de un club de pádel mediante reservas de pistas, usuarios y futuras funcionalidades de ligas y automatización.",
-    technologies: ["Laravel", "MySQL", "JavaScript", "CSS"],
+      "Proyecto web para la gestión de un club de pádel, con una interfaz responsive diseñada para integrar reservas de pistas, usuarios, ligas y gestión del club.",
+    technologies: ["Laravel", "Blade", "JavaScript", "CSS"],
     image: "/projects/padel.jpg",
     href: "/proyectos/club-padel",
   },
@@ -29,22 +38,12 @@ const projects = [
     image: "/projects/Home_Segunda_Mano.jpg",
     href: "/proyectos/segunda-mano",
   },
-  {
-    title: "Proyectos WordPress",
-    type: "Desarrollo web",
-    description:
-      "Diseño y desarrollo de páginas corporativas e informativas para negocios mediante WordPress y Elementor.",
-    technologies: ["WordPress", "Elementor", "CSS", "Responsive"],
-    image: "/projects/Entheos.jpg",
-    href: "/proyectos/wordpress-entheos",
-  },
 ];
 
 export default function Projects() {
   return (
     <section id="proyectos" className="bg-slate-950 py-24 text-white">
       <div className="mx-auto max-w-7xl px-6">
-
         {/* ==================================================
             CABECERA
         ================================================== */}
@@ -78,7 +77,6 @@ export default function Projects() {
               key={project.title}
               className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30"
             >
-
               {/* ==========================================
                   IMAGEN
               ========================================== */}
@@ -164,11 +162,9 @@ export default function Projects() {
                   </div>
                 )}
               </div>
-
             </article>
           ))}
         </div>
-
       </div>
     </section>
   );

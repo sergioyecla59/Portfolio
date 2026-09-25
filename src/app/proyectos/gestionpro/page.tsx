@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-export default function ClubPadelPage() {
+export default function GestionProPage() {
   const [imagenAbierta, setImagenAbierta] = useState<string | null>(null);
 
   /* ==================================================
@@ -69,51 +69,55 @@ export default function ClubPadelPage() {
           <div className="mb-6 flex flex-wrap items-center gap-3">
 
             <span className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-300">
-              Proyecto 02
+              Proyecto 01
             </span>
 
             <span className="rounded-full border border-white/10 px-4 py-2 text-sm text-slate-400">
-              Aplicación web
+              Software de gestión
             </span>
 
           </div>
 
           <h1 className="max-w-4xl text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-            Club Pádel
+            GestionPro
           </h1>
 
           <p className="mt-4 text-xl font-medium text-cyan-400">
-            Interfaz web para la gestión de un club de pádel
+            Aplicación web para la gestión empresarial
           </p>
 
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-400">
-            Proyecto web desarrollado con Laravel y Blade, centrado en el
-            diseño de una interfaz responsive para gestionar la experiencia
-            digital de un club de pádel, sus pistas, horarios, usuarios y
-            proceso de reserva.
+            Aplicación web desarrollada para centralizar la gestión de pequeñas
+            y medianas empresas, incorporando clientes, productos, proveedores
+            y documentos comerciales mediante un frontend moderno conectado a
+            una API REST y una base de datos.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
 
             {[
+              "Next.js",
+              "React",
+              "TypeScript",
+              "Tailwind CSS",
               "Laravel",
-              "Blade",
-              "PHP",
-              "JavaScript",
-              "HTML",
-              "CSS",
+              "REST API",
+              "MySQL",
             ].map((technology) => (
+
               <span
                 key={technology}
                 className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-slate-300"
               >
                 {technology}
               </span>
+
             ))}
 
           </div>
 
         </div>
+
       </section>
 
 
@@ -127,23 +131,25 @@ export default function ClubPadelPage() {
 
           <button
             type="button"
-            onClick={() => setImagenAbierta("/projects/padel.jpg")}
+            onClick={() =>
+              setImagenAbierta("/projects/gestionpro/HomeGestion.jpg")
+            }
             className="block w-full cursor-zoom-in overflow-hidden rounded-2xl bg-slate-900"
           >
 
             <Image
-              src="/projects/padel.jpg"
-              alt="Página principal de Club Pádel"
+              src="/projects/gestionpro/HomeGestion.jpg"
+              alt="Dashboard principal de GestionPro"
               width={1920}
               height={1080}
               priority
-              unoptimized
               className="h-auto w-full transition duration-500 hover:scale-[1.01]"
             />
 
           </button>
 
         </div>
+
       </section>
 
 
@@ -162,10 +168,10 @@ export default function ClubPadelPage() {
             </p>
 
             <h2 className="text-4xl font-bold leading-tight">
-              Una interfaz diseñada para
+              Una aplicación completa
 
               <span className="block text-slate-500">
-                digitalizar la gestión del club.
+                para la gestión empresarial.
               </span>
             </h2>
 
@@ -174,27 +180,27 @@ export default function ClubPadelPage() {
           <div className="space-y-5 text-lg leading-8 text-slate-600">
 
             <p>
-              Club Pádel es un proyecto web orientado a digitalizar la
-              experiencia de un club de pádel mediante una interfaz moderna,
-              clara y responsive.
+              GestionPro es una aplicación web orientada a centralizar la
+              gestión diaria de pequeñas y medianas empresas desde una única
+              plataforma.
             </p>
 
             <p>
-              El proyecto incluye el diseño y desarrollo de las principales
-              vistas de la plataforma, como la presentación de las pistas,
-              horarios, perfil de usuario y el flujo visual para realizar
-              una reserva.
+              El sistema permite organizar clientes, productos, proveedores
+              y documentos comerciales, relacionando la información para
+              facilitar el trabajo diario de la empresa.
             </p>
 
             <p>
-              La interfaz está desarrollada sobre Laravel utilizando Blade,
-              PHP, JavaScript, HTML y CSS, con una estructura preparada para
-              integrar las distintas áreas de gestión del club.
+              La aplicación utiliza Next.js y TypeScript para el frontend,
+              conectado mediante una API REST a un backend desarrollado con
+              Laravel y una base de datos MySQL.
             </p>
 
           </div>
 
         </div>
+
       </section>
 
 
@@ -209,11 +215,11 @@ export default function ClubPadelPage() {
           <div className="mb-12">
 
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-cyan-600">
-              Interfaz
+              Funcionalidades
             </p>
 
             <h2 className="text-4xl font-bold">
-              Vistas y funcionalidades diseñadas
+              Qué permite gestionar la aplicación
             </h2>
 
           </div>
@@ -221,19 +227,21 @@ export default function ClubPadelPage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
             {[
-              "Página principal",
-              "Visualización de pistas",
-              "Horarios y tarifas",
-              "Perfil de usuario",
-              "Interfaz de reservas",
-              "Selección de pista",
-              "Selección de horario",
-              "Diseño responsive",
+              "Gestión de clientes",
+              "Gestión de productos",
+              "Gestión de proveedores",
+              "Presupuestos",
+              "Pedidos",
+              "Albaranes",
+              "Facturas",
+              "Control de stock",
             ].map((feature, index) => (
+
               <div
                 key={feature}
                 className="rounded-2xl border border-slate-200 bg-slate-50 p-5"
               >
+
                 <span className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-cyan-400 font-bold text-slate-950">
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -241,12 +249,15 @@ export default function ClubPadelPage() {
                 <p className="font-semibold">
                   {feature}
                 </p>
+
               </div>
+
             ))}
 
           </div>
 
         </div>
+
       </section>
 
 
@@ -269,8 +280,9 @@ export default function ClubPadelPage() {
             </h2>
 
             <p className="mt-4 max-w-2xl text-slate-400">
-              Diferentes vistas diseñadas para la plataforma y su experiencia
-              de reserva. Pulsa sobre una captura para verla completa.
+              Diferentes vistas de la gestión de clientes, productos y
+              documentos comerciales. Pulsa sobre una captura para verla
+              completa.
             </p>
 
           </div>
@@ -283,24 +295,25 @@ export default function ClubPadelPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 
 
-            {/* PISTAS */}
+            {/* CLIENTES */}
 
             <article className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
 
               <button
                 type="button"
                 onClick={() =>
-                  setImagenAbierta("/projects/Pistas_Club_Padel.jpg")
+                  setImagenAbierta(
+                    "/projects/gestionpro/ClientesGestion.jpg"
+                  )
                 }
                 className="block h-[260px] w-full cursor-zoom-in overflow-hidden bg-slate-950"
               >
 
                 <Image
-                  src="/projects/Pistas_Club_Padel.jpg"
-                  alt="Interfaz de pistas de Club Pádel"
+                  src="/projects/gestionpro/ClientesGestion.jpg"
+                  alt="Gestión de clientes de GestionPro"
                   width={1600}
                   height={900}
-                  unoptimized
                   className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
                 />
 
@@ -309,16 +322,16 @@ export default function ClubPadelPage() {
               <div className="border-t border-white/10 p-5">
 
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">
-                  Pistas
+                  Clientes
                 </span>
 
                 <h3 className="mt-2 text-lg font-bold">
-                  Elige tu pista
+                  Gestión de clientes
                 </h3>
 
                 <p className="mt-2 text-sm leading-6 text-slate-400">
-                  Vista diseñada para presentar las cuatro pistas del club y
-                  facilitar al jugador la elección de dónde quiere jugar.
+                  Gestión completa de clientes con creación, consulta,
+                  modificación y eliminación de registros.
                 </p>
 
               </div>
@@ -326,24 +339,25 @@ export default function ClubPadelPage() {
             </article>
 
 
-            {/* RESERVAS */}
+            {/* PRODUCTOS */}
 
             <article className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
 
               <button
                 type="button"
                 onClick={() =>
-                  setImagenAbierta("/projects/Reservas_Club_Padel.jpg")
+                  setImagenAbierta(
+                    "/projects/gestionpro/ProductosGestion.jpg"
+                  )
                 }
                 className="block h-[260px] w-full cursor-zoom-in overflow-hidden bg-slate-950"
               >
 
                 <Image
-                  src="/projects/Reservas_Club_Padel.jpg"
-                  alt="Interfaz de reserva de Club Pádel"
+                  src="/projects/gestionpro/ProductosGestion.jpg"
+                  alt="Gestión de productos de GestionPro"
                   width={1600}
                   height={900}
-                  unoptimized
                   className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
                 />
 
@@ -352,16 +366,16 @@ export default function ClubPadelPage() {
               <div className="border-t border-white/10 p-5">
 
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">
-                  Reservas
+                  Productos
                 </span>
 
                 <h3 className="mt-2 text-lg font-bold">
-                  Reserva tu pista
+                  Productos y stock
                 </h3>
 
                 <p className="mt-2 text-sm leading-6 text-slate-400">
-                  Diseño del flujo de reserva dividido en pasos para
-                  seleccionar fecha, pista y horario de forma clara.
+                  Gestión de productos con referencia, categoría, precio,
+                  stock disponible y stock mínimo.
                 </p>
 
               </div>
@@ -369,24 +383,25 @@ export default function ClubPadelPage() {
             </article>
 
 
-            {/* REGISTRO */}
+            {/* PRESUPUESTOS */}
 
             <article className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
 
               <button
                 type="button"
                 onClick={() =>
-                  setImagenAbierta("/projects/Registro_Club_Padel.jpg")
+                  setImagenAbierta(
+                    "/projects/gestionpro/PresupuestosGestion.jpg"
+                  )
                 }
                 className="block h-[260px] w-full cursor-zoom-in overflow-hidden bg-slate-950"
               >
 
                 <Image
-                  src="/projects/Registro_Club_Padel.jpg"
-                  alt="Interfaz de registro de Club Pádel"
+                  src="/projects/gestionpro/PresupuestosGestion.jpg"
+                  alt="Gestión de presupuestos de GestionPro"
                   width={1600}
                   height={900}
-                  unoptimized
                   className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
                 />
 
@@ -395,16 +410,16 @@ export default function ClubPadelPage() {
               <div className="border-t border-white/10 p-5">
 
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">
-                  Usuarios
+                  Presupuestos
                 </span>
 
                 <h3 className="mt-2 text-lg font-bold">
-                  Registro de jugadores
+                  Gestión de presupuestos
                 </h3>
 
                 <p className="mt-2 text-sm leading-6 text-slate-400">
-                  Interfaz de registro diseñada para el acceso de los
-                  jugadores a las áreas privadas de la plataforma.
+                  Creación y gestión de presupuestos con clientes, productos,
+                  cantidades, impuestos, estados y cálculo de totales.
                 </p>
 
               </div>
@@ -414,6 +429,7 @@ export default function ClubPadelPage() {
           </div>
 
         </div>
+
       </section>
 
 
@@ -434,10 +450,10 @@ export default function ClubPadelPage() {
               </p>
 
               <h2 className="text-4xl font-bold leading-tight">
-                Una interfaz pensada
+                Un proyecto trabajando
 
                 <span className="block text-slate-400">
-                  para digitalizar el club.
+                  frontend, backend y base de datos.
                 </span>
               </h2>
 
@@ -446,13 +462,14 @@ export default function ClubPadelPage() {
             <div className="grid grid-cols-2 gap-4">
 
               {[
-                "Diseño de interfaz",
                 "Frontend",
-                "Laravel y Blade",
-                "Experiencia de reserva",
-                "Diseño responsive",
-                "Adaptación móvil",
+                "Backend",
+                "Base de datos",
+                "REST API",
+                "CRUD",
+                "Responsive",
               ].map((item) => (
+
                 <div
                   key={item}
                   className="rounded-xl border border-white/10 bg-white/[0.03] p-4"
@@ -461,6 +478,7 @@ export default function ClubPadelPage() {
                     {item}
                   </span>
                 </div>
+
               ))}
 
             </div>
@@ -468,6 +486,7 @@ export default function ClubPadelPage() {
           </div>
 
         </div>
+
       </section>
 
 
@@ -499,6 +518,7 @@ export default function ClubPadelPage() {
           </Link>
 
         </div>
+
       </section>
 
 
@@ -534,10 +554,9 @@ export default function ClubPadelPage() {
 
             <Image
               src={imagenAbierta}
-              alt="Captura ampliada del proyecto Club Pádel"
+              alt="Captura ampliada del proyecto"
               width={1920}
               height={1080}
-              unoptimized
               className="max-h-[90vh] max-w-[95vw] rounded-xl object-contain shadow-2xl"
             />
 
